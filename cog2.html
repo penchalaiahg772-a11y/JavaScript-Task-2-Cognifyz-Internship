@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 2</title>
+   <style>
+    body {
+    font-family: Arial, sans-serif;
+    background: #2119c5;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+button {
+    background:rgb(30, 3, 206);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+input {
+    width: 170px;
+    padding: 10px;
+    margin: 5px;
+}
+   </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>JavaScript Task 2</h1>
+    <button id="colorBtn" onclick="changeColor()">Click Me</button>
+
+    <br><br>
+    <button onclick="showGreeting()">Show Greeting</button>
+
+    <br><br>
+    <h2>Simple Calculator</h2>
+
+    <input type="number" id="num1" placeholder="First Number">
+    <input type="number" id="num2" placeholder="Second Number">
+
+    <br><br>
+
+    <button onclick="calculateSum()">Add</button>
+
+    <h3 id="result"></h3>
+</div>
+
+<script>
+function changeColor() {
+    const button = document.getElementById("colorBtn");
+
+    if (button.style.backgroundColor === "green") {
+        button.style.backgroundColor = "#007BFF";
+    } else {
+        button.style.backgroundColor = "green";
+    }
+}
+function showGreeting() {
+    const hour = new Date().getHours();
+    let greeting;
+
+    if (hour < 12) {
+        greeting = "Good Morning!";
+    } else if (hour < 18) {
+        greeting = "Good Afternoon!";
+    } else {
+        greeting = "Good Evening!";
+    }
+
+    alert(greeting);
+}
+function calculateSum() {
+    const num1 = Number(document.getElementById("num1").value);
+    const num2 = Number(document.getElementById("num2").value);
+
+    const sum = num1 + num2;
+
+    document.getElementById("result").innerHTML = "Result: " + sum;
+}
+</script>
+
+</body>
+</html>
